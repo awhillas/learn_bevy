@@ -1,10 +1,9 @@
-use bevy::prelude::*;
-
 pub mod components;
 mod systems;
 
 use super::AppState;
 use super::SimulationState;
+use bevy::prelude::*;
 use systems::*;
 
 #[derive(SystemSet, Debug, Hash, PartialEq, Eq, Clone)]
@@ -33,8 +32,8 @@ impl Plugin for PlayerPlugin {
                     .run_if(in_state(AppState::Game))
                     .run_if(in_state(SimulationState::Running)),
             )
-            .add_system(enemy_collision_detection)
-            .add_system(star_collision_detection)
+            // .add_system(enemy_collision_detection)
+            // .add_system(star_collision_detection)
             .add_systems(
                 (enemy_collision_detection, star_collision_detection)
                     .in_set(OnUpdate(AppState::Game))

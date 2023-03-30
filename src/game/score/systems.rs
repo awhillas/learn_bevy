@@ -5,7 +5,6 @@ use crate::events::GameOver;
 
 pub fn insert_score(mut commands: Commands) {
     commands.insert_resource(Score::default());
-    println!("Score created!!!!!!!!!!!!!!!!!")
 }
 
 pub fn remove_score(mut commands: Commands) {
@@ -14,7 +13,7 @@ pub fn remove_score(mut commands: Commands) {
 
 pub fn update_score(score: Res<Score>) {
     if score.is_changed() {
-        println!("Socre is {}", score.value.to_string())
+        println!("Score is {}", score.value.to_string())
     }
 }
 
